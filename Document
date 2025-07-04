@@ -1,0 +1,6 @@
+Instaled Depandancyes
+  npm install @rneui/themed @rneui/base                               //not Instaled
+  npm install @rneui/themed @rneui/base --legacy-peer-deps
+  npm install @rneui/base@edge @rneui/themed@edge
+  npm install react-native-vector-icons
+  npm install react-native-safe-area-context
