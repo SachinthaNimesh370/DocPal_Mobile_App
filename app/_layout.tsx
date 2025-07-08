@@ -12,6 +12,9 @@ export default function RootLayout() {
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   });
 
+  // TODO: Replace with your real authentication logic
+  const isSignedIn = false; // Set to true if user is authenticated
+
   if (!loaded) {
     // Async font loading only occurs in development.
     return null;
@@ -20,7 +23,11 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        {isSignedIn ? (
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        ) : (
+          <Stack.Screen name="(auth)/signIn" options={{ headerShown: false }} />
+        )}
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />
