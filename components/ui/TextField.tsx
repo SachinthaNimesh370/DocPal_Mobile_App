@@ -1,11 +1,16 @@
 import React from 'react';
 import { StyleSheet, TextInput, TextInputProps, View } from 'react-native';
 
-export function TextField(props: TextInputProps) {
+interface TextFieldProps extends TextInputProps {
+  placeholder: string; // Make placeholder a required prop
+}
+
+export function TextField({ placeholder, ...props }: TextFieldProps) {
   return (
     <View style={styles.container}>
       <TextInput
         style={styles.input}
+        placeholder={placeholder} // Ensure placeholder is passed
         placeholderTextColor="#888"
         {...props}
       />

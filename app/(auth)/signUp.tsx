@@ -1,14 +1,25 @@
+import { AppButton } from '@/components/ui/AppButton';
+import { TextField } from '@/components/ui/TextField';
 import { useRouter } from 'expo-router';
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function SignUpScreen() {
   const router = useRouter();
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Sign Up</Text>
-      {/* Add your sign-up form here */}
-      <Button title="Go to Sign In" onPress={() => router.push('/(auth)/signIn')} />
+      <TextField placeholder='User Name'/>
+      <TextField placeholder='Email'/>  
+      <TextField placeholder='Password' secureTextEntry={true}/>
+      <TextField placeholder='Confirm Password' secureTextEntry={true}/>  
+      <AppButton title="Sign Up" onPress={() => router.push('/(tabs)/explore')} />    
+
+
+        <TouchableOpacity onPress={() => router.push('/(auth)/signIn')}>
+          <Text style={styles.registrationText}>Don't have an account? Register here</Text>
+        </TouchableOpacity>
+      
     </View>
   );
 }
@@ -24,5 +35,10 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 24,
+  },
+  registrationText: {
+    marginTop: 16,
+    color: 'blue',
+    textDecorationLine: 'underline',
   },
 });
