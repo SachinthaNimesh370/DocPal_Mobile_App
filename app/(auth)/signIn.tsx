@@ -13,7 +13,7 @@ export default function SignInScreen() {
       
       <TextField placeholder='User Name'/>
       <PasswordField placeholder='Password'/>
-      <AppButton title="Sign In" onPress={() => router.push('/(tabs)/explore')} />
+      <AppButton title="Sign In" onPress={() => router.push('/(tabs)/home')} />
         
       
       
