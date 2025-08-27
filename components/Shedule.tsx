@@ -47,13 +47,14 @@ export default function Shedule({
 const styles = StyleSheet.create({
   container: {
     marginHorizontal: 20,
-    marginTop: 20,
-    borderRadius: 12,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 6,
-    elevation: 5,
+  marginTop: 20,
+  borderRadius: 12,
+  shadowColor: '#061af8ff',   
+  shadowOffset: { width: 0, height: 10 },
+  shadowOpacity: 0.9,       
+  shadowRadius: 12,         
+  elevation: 15,            
+  backgroundColor: '#fff',  
   },
   touchable: {
     flexDirection: 'row',
