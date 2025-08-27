@@ -1,19 +1,35 @@
 import Model from '@/components/ui/Model';
 import React from 'react';
-import { ScrollView } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
 
 export default function ModelList() {
   return (
-    <ScrollView 
-      horizontal
-      showsHorizontalScrollIndicator={false} // hides scrollbar
-      contentContainerStyle={{ paddingHorizontal: 10 }} // optional padding
-    >
-      <Model backgroundColor='green'componentName=' Hii' iconName='man'/>
-      <Model backgroundColor='green'componentName=' Hii' iconName='man'/>
-      <Model backgroundColor='green'componentName=' Hii' iconName='man'/>
-      <Model backgroundColor='green'componentName=' Hii' iconName='man'/>
+    <SafeAreaView>
+        <ScrollView 
+            horizontal
+            showsHorizontalScrollIndicator={false} 
+            contentContainerStyle={{ paddingHorizontal: 10,  }} // Add horizontal padding and white background
+        >
+            <Model backgroundColor='green'componentName=' Hii' iconName='man'/>
+            <Model backgroundColor='green'componentName=' Hii' iconName='man'/>
+            <Model backgroundColor='green'componentName=' Hii' iconName='man'/>
+            <Model backgroundColor='green'componentName=' Hii' iconName='man'/>
      
-    </ScrollView>
+        </ScrollView>
+    </SafeAreaView>
+    
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    height: 120, // Adjusted height
+    width: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 20,
+
+    borderRadius: 8,
+  },
+  
+});
